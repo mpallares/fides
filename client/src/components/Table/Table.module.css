@@ -1,0 +1,31 @@
+table, th, td {
+    border: 1px solid;
+  }
+
+  .header {
+    background: rgb(0,67,255);
+
+background: linear-gradient(90deg, rgba(0,67,255,1) 0%, rgba(30,69,242,1) 26%, rgba(232,3,88,1) 100%);
+background: #006DA5;
+  }
+
+  th {
+    border: black solid 1px;
+    padding: 0.5rem;
+    color: #fff
+  }
+  td {
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+
+table {
+    background-color: #fff;
+    width: 85%;
+    border-collapse: collapse;
+  }
