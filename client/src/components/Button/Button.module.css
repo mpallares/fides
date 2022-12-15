@@ -1,0 +1,28 @@
+.button {
+    border: 1px solid #fff;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #33FF99;
+    padding: 0.3rem 0.3rem;
+    width: 7rem;
+    margin: 0.5rem;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+}
+
+  .button:hover {
+    top: -2.5px;
+  }
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
