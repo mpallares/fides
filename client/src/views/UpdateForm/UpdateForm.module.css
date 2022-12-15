@@ -1,0 +1,30 @@
+.inputText {
+    margin-bottom: 15px;
+    height: 32px;
+    padding: 6px ;
+    width: 100%;
+    border: none;
+    background-color: #f3f3f3;
+    outline: none;
+  }
+  
+  button[type=submit] {
+    margin: 20px auto 0;
+    height: 40px;
+    border-radius: 25px;
+    border: none;
+    color: #eee;
+    font-weight: 700;
+    box-shadow: 1px 4px 10px 1px #aaa;
+    cursor: pointer;
+    font-family: "Montserrat";
+    background-color: #1e45f2;
+    padding: 0.3rem 0.3rem;
+    width: 7rem;
+    margin: 0.5rem;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
