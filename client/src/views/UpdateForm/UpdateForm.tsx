@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import api from "../../api/api";
-import { getUser } from "../../api/services/user";
 import { useAppDispatch } from "../../redux/hooks";
 import { updateUser } from "../../redux/userSlice";
-import { User } from "../../utils/types";
 import styles from "./UpdateForm.module.css";
 
 interface UpdateFormProps {
@@ -49,6 +47,7 @@ export const UpdateForm = ({ userId, setShowModal }: UpdateFormProps) => {
         console.log(err);
       }
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId]);
 
   //   const editUser = async (userId: string) => {

@@ -9,7 +9,6 @@ import { addUsers } from "../../redux/userSlice";
 import { getUsers } from "../../api/services/user";
 import { Modal } from "../../components/Modal/Modal";
 import { ModalContent } from "../../components/Modal/ModalContent";
-import { Button } from "../../components/Button/Button";
 
 export const Home = () => {
   const dispatch = useAppDispatch();
@@ -19,7 +18,7 @@ export const Home = () => {
   const [userId, setUserId] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [usersPerPage, setUsersPerPage] = useState(5);
+  const [usersPerPage] = useState(5);
   const indexOfLastUser = currentPage * usersPerPage;
   const indexOfFirstUser = indexOfLastUser - usersPerPage;
   const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
@@ -37,6 +36,7 @@ export const Home = () => {
       dispatch(addUsers(users));
       setLoading(false);
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onViewItemClick = (userId: string) => {

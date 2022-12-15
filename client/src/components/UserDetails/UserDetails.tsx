@@ -19,6 +19,7 @@ export const UserDetails = ({ userId }: UserDetailsProps) => {
         console.log(err);
       }
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   console.log("user", user);
