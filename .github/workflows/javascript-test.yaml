@@ -19,11 +19,11 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org
       - name: install
-        run: npm ci
-        workdir: ./client
+        run: npm install
+        working-directory: ./client
       - name: test
         run: npm test
-        workdir: ./client
+        working-directory: ./client
       - name: build
         run: npm run build
-        workdir: ./client
+        working-directory: ./client
