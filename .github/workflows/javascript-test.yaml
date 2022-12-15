@@ -1,0 +1,29 @@
+name: Continuous testing
+
+on:
+  pull_request:
+    types: ["opened", "synchronize"]
+  push:
+    branches:
+      - main
+
+jobs:
+  test-server:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use node 16
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org
+      - name: install
+        run: npm ci
+        workdir: ./client
+      - name: test
+        run: npm test
+        workdir: ./client
+      - name: build
+        run: npm run build
+        workdir: ./client
