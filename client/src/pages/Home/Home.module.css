@@ -1,0 +1,10 @@
+body {
+    background-color: #1e45f2;
+}
+
+.buttonsContainer {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
