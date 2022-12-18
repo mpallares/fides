@@ -9,6 +9,7 @@ import { addUsers } from "../../redux/userSlice";
 import { getUsers } from "../../api/services/user";
 import { Modal } from "../../components/Modal/Modal";
 import { ModalContent } from "../../components/Modal/ModalContent";
+import { Button } from "../../components/Button/Button";
 
 export const Home = () => {
   const dispatch = useAppDispatch();
@@ -23,8 +24,6 @@ export const Home = () => {
   const indexOfFirstUser = indexOfLastUser - usersPerPage;
   const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
 
-  console.log("usersss", users);
-
   const paginate = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
@@ -38,6 +37,11 @@ export const Home = () => {
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const onCreateItemClick = () => {
+    setShowModal(true);
+    setAction("Create");
+  };
 
   const onViewItemClick = (userId: string) => {
     setUserId(userId);
@@ -57,6 +61,16 @@ export const Home = () => {
     setAction("Edit");
   };
 
+  const columns = [
+    "ID",
+    "Created At",
+    "Company",
+    "Name",
+    "Surname",
+    "Email",
+    "Actions",
+  ];
+
   return (
     <>
       <NavBar />
@@ -70,11 +84,12 @@ export const Home = () => {
       </Modal>
       <div className={styles.optionsContainer}>
         <div className={styles.createButtonContainer}>
-          {/* <Button title="Create" onClick={() => onCreateItemClick()} /> */}
+          <Button title="Create" onClick={() => onCreateItemClick()} />
         </div>
       </div>
       <Table
-        users={currentUsers}
+        columns={columns}
+        data={currentUsers}
         onDeleteItemClick={onDeleteItemClick}
         onViewItemClick={onViewItemClick}
         onUpdateItemClick={onUpdateItemClick}
