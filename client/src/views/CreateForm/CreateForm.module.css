@@ -1,0 +1,59 @@
+.inputText {
+    margin-bottom: 15px;
+    border-radius: 5px;
+    height: 32px;
+    padding: 6px ;
+    width: 100%;
+    border: none;
+    background-color: #f3f3f3;
+    outline: none;
+  }
+
+  .newProject {
+    margin: 0.5rem 0rem 0.5rem 0rem;
+    color: black;
+    height: 8rem;
+    width: fit-content;
+    border: none
+  }
+
+  .buttonProject {
+    margin: 20px auto 0;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    color: #eee;
+    font-weight: 700;
+    box-shadow: 1px 4px 10px 1px #aaa;
+    cursor: pointer;
+    background-color: #19115b;
+    padding: 0.3rem 0.3rem;
+    width: 30%;
+    margin: 0.5rem;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+
+  .createButton {
+    margin: 20px auto 0;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    color: #eee;
+    font-weight: 700;
+    box-shadow: 1px 4px 10px 1px #aaa;
+    cursor: pointer;
+    background-color: #19115b;
+    padding: 0.3rem 0.3rem;
+    width: 100%;
+    margin: 0.5rem;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
