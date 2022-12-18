@@ -20,12 +20,14 @@ const users: User[] = [
 
 test("should render Table component", () => {
   const onViewItemClick = () => {};
+  const columns = ["test1", "test2"];
   const onDeleteItemClick = () => {};
   const onUpdateItemClick = () => {};
 
   const { getByText } = render(
     <Table
-      users={users}
+      columns={columns}
+      data={users}
       onViewItemClick={onViewItemClick}
       onDeleteItemClick={onDeleteItemClick}
       onUpdateItemClick={onUpdateItemClick}
@@ -37,13 +39,14 @@ test("should render Table component", () => {
 
 test("should call view function on onViewItemClick", () => {
   const onViewItemClick = jest.fn();
-
+  const columns = ["test1", "test2"];
   const onDeleteItemClick = () => {};
   const onUpdateItemClick = () => {};
 
   const { getByText } = render(
     <Table
-      users={users}
+      columns={columns}
+      data={users}
       onViewItemClick={onViewItemClick}
       onDeleteItemClick={onDeleteItemClick}
       onUpdateItemClick={onUpdateItemClick}
@@ -53,12 +56,14 @@ test("should call view function on onViewItemClick", () => {
   expect(onViewItemClick).toBeCalledWith(users[0].id);
 });
 test("should call view function on onDeleteItemClick", () => {
+  const columns = ["test1", "test2"];
   const onDeleteItemClick = jest.fn();
   const onViewItemClick = () => {};
   const onUpdateItemClick = () => {};
   render(
     <Table
-      users={users}
+      columns={columns}
+      data={users}
       onViewItemClick={onViewItemClick}
       onDeleteItemClick={onDeleteItemClick}
       onUpdateItemClick={onUpdateItemClick}
@@ -69,11 +74,14 @@ test("should call view function on onDeleteItemClick", () => {
 });
 test("should call view function on onUpdateItemClick", () => {
   const onUpdateItemClick = jest.fn();
+  const columns = ["test1", "test2"];
+
   const onViewItemClick = () => {};
   const onDeleteItemClick = () => {};
   render(
     <Table
-      users={users}
+      columns={columns}
+      data={users}
       onViewItemClick={onViewItemClick}
       onDeleteItemClick={onDeleteItemClick}
       onUpdateItemClick={onUpdateItemClick}

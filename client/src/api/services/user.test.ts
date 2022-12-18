@@ -26,14 +26,13 @@ describe("Mock Api Tests", () => {
 
     expect(singleUser).toEqual(selectedUser);
   });
+
   test("should update user", async () => {
     const users = await getUsers();
 
     const singleUser = users[users.length - 1];
 
     const selectedUser = await getUser(singleUser.id);
-
-    console.log("original user", selectedUser);
 
     selectedUser.firstName = "Maria";
     const updatedUser = await updateUser(selectedUser.id, selectedUser);
