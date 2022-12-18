@@ -50,10 +50,12 @@ export const UpdateForm = ({ userId, setShowModal }: UpdateFormProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId]);
 
-  //   const editUser = async (userId: string) => {
-  //     const data = await getUser(userId);
-  //     setShowModal(false);
-  //   };
+  // const editUser = async (userId: string) => {
+  //   const data = await updateUser(userId, updateUser);
+
+  //   setShowModal(false);
+  //   return da
+  // };
 
   const handleChange = (inputName: keyof typeof user, value: string) => {
     setUser({
@@ -69,9 +71,6 @@ export const UpdateForm = ({ userId, setShowModal }: UpdateFormProps) => {
     };
     dispatch(updateUser({ userId, updatedUser }));
     setShowModal(false);
-    // dispatch(updateUser(userId, updatedUser))
-
-    // editUser(userId, updatedUser);
   };
 
   return (
@@ -139,7 +138,9 @@ export const UpdateForm = ({ userId, setShowModal }: UpdateFormProps) => {
         onChange={(e) => handleChange("longDescription", e.target.value)}
         value={user.longDescription}
       ></textarea>
-      <button type="submit">Edit</button>
+      <button className={styles.updateForm} type="submit">
+        Edit
+      </button>
     </form>
   );
 };

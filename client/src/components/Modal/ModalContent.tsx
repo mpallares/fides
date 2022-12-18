@@ -1,4 +1,5 @@
 import React from "react";
+import { CreateForm } from "../../views/CreateForm/CreateForm";
 import { DeleteForm } from "../../views/DeleteForm/DeleteForm";
 import { UpdateForm } from "../../views/UpdateForm/UpdateForm";
 import { UserDetails } from "../UserDetails/UserDetails";
@@ -14,19 +15,9 @@ export const ModalContent = ({
   userId,
   setShowModal,
 }: ModalContentProps) => {
-  //   if (action === "Create") {
-  //     return <CreateForm onSubmit={createClient} />;
-  //   } else if (action === "Delete") {
-  //     return (
-  //       <DeleteForm
-  //         clientId={activecClientId}
-  //         onSubmit={() => deleteClient(activecClientId)}
-  //       />
-  //     );
-  //   } else if (action === "Edit") {
-  //     return <UpdateForm clientId={activecClientId} onSubmit={editClient} />;
-  //   } else if (action === "View") {
-  if (action === "Edit") {
+  if (action === "Create") {
+    return <CreateForm setShowModal={setShowModal} />;
+  } else if (action === "Edit") {
     return <UpdateForm userId={userId} setShowModal={setShowModal} />;
   } else if (action === "Delete") {
     console.log("user id inside modal content", userId);

@@ -1,8 +1,6 @@
 import React from "react";
 import { User } from "../../utils/types";
 import { Button } from "../Button/Button";
-// import { ClientListViewType } from "../../utils/types";
-// import { Button } from "../Button/Button";
 import styles from "./Table.module.css";
 
 export interface TableProps {
@@ -10,17 +8,13 @@ export interface TableProps {
   onViewItemClick: (userId: string) => void;
   onDeleteItemClick: (userId: string) => void;
   onUpdateItemClick: (userId: string) => void;
-  //   columns: string[];
-  //   data: ClientListViewType[];
-  //   sorted?: { columnName: string; columnValue: string };
-  //   onSort: (columnName: string, value: string) => void;
-  //   onCreateItemClick: () => void;
-  //   onViewItemClick: (click: string) => void;
-  //   onUpdateItemClick: (click: string) => void;
-  //   onDeleteItemClick: (click: string) => void;
+  columns: string[];
+  data: User[];
 }
 
 export const Table = ({
+  columns,
+  data,
   users,
   onViewItemClick,
   onDeleteItemClick,
@@ -33,16 +27,6 @@ export const Table = ({
 //   onUpdateItemClick,
 //   onDeleteItemClick,
 TableProps) => {
-  const columns = [
-    "ID",
-    "Created At",
-    "Company",
-    "Name",
-    "Surname",
-    "Email",
-    "Actions",
-  ];
-
   return (
     <div className={styles.container}>
       <table>
@@ -54,7 +38,7 @@ TableProps) => {
           </tr>
         </thead>
         <tbody>
-          {users?.map((user: any) => {
+          {data?.map((user: any) => {
             return (
               <tr key={user.id}>
                 <td>{user?.id}</td>

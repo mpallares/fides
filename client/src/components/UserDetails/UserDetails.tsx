@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import api from "../../api/api";
+import { useAppSelector } from "../../redux/hooks";
 import { User } from "../../utils/types";
 import styles from "./UserDetails.module.css";
 
@@ -9,20 +9,21 @@ interface UserDetailsProps {
 
 export const UserDetails = ({ userId }: UserDetailsProps) => {
   const [user, setUser] = useState<User>();
+  const users = useAppSelector((state) => state.user.value);
 
   useEffect(() => {
     (async () => {
       try {
-        const result = await api.get(`/users/${userId}`);
-        setUser(result.data);
+        const filteredUser = users.filter((user) => {
+          return user.id === userId;
+        });
+        setUser(filteredUser[0]);
       } catch (err) {
         console.log(err);
       }
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  console.log("user", user);
 
   return (
     <>

@@ -12,10 +12,7 @@ export const DeleteForm = ({ userId, setShowModal }: DeleteFormProps) => {
   const dispatch = useAppDispatch();
 
   const deleteUserForm = async (userId: string) => {
-    // console.log("userId", userId);
-    // const data = await deleteUser(userId);
     dispatch(deleteUser(userId));
-    // await fetchClients();
     setShowModal(false);
   };
   const handleSubmit = (e: React.FormEvent<EventTarget>) => {
@@ -32,7 +29,9 @@ export const DeleteForm = ({ userId, setShowModal }: DeleteFormProps) => {
         placeholder="id"
         value={userId}
       />
-      <button type="submit">Delete</button>
+      <button className={styles.deleteButton} type="submit">
+        Delete
+      </button>
     </form>
   );
 };
