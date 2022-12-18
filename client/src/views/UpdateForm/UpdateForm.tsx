@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import api from "../../api/api";
 import { useAppDispatch } from "../../redux/hooks";
 import { updateUser } from "../../redux/userSlice";
+import { User } from "../../utils/types";
 import styles from "./UpdateForm.module.css";
 
 interface UpdateFormProps {
@@ -33,8 +34,8 @@ export const UpdateForm = ({ userId, setShowModal }: UpdateFormProps) => {
         setUser({
           ...user,
           createdAt: data.createdAt,
-          firstName: data.industry,
-          lastName: data.about,
+          firstName: data.firstName,
+          lastName: data.lastName,
           email: data.email,
           longDescription: data.longDescription,
           shortDescription: data.shortDescription,
@@ -50,13 +51,6 @@ export const UpdateForm = ({ userId, setShowModal }: UpdateFormProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId]);
 
-  // const editUser = async (userId: string) => {
-  //   const data = await updateUser(userId, updateUser);
-
-  //   setShowModal(false);
-  //   return da
-  // };
-
   const handleChange = (inputName: keyof typeof user, value: string) => {
     setUser({
       ...user,
@@ -66,7 +60,7 @@ export const UpdateForm = ({ userId, setShowModal }: UpdateFormProps) => {
 
   const handleSubmit = (e: React.FormEvent<EventTarget>) => {
     e.preventDefault();
-    const updatedUser = {
+    const updatedUser: User = {
       ...user,
     };
     dispatch(updateUser({ userId, updatedUser }));
@@ -79,10 +73,18 @@ export const UpdateForm = ({ userId, setShowModal }: UpdateFormProps) => {
       <input
         className={styles.inputText}
         type="text"
+        name="id"
+        placeholder="id"
+        onChange={(e) => handleChange("id", e.target.value)}
+        value={user.id}
+      />
+      <input
+        className={styles.inputText}
+        type="text"
         name="createdAt"
         placeholder="Created At"
         onChange={(e) => handleChange("createdAt", e.target.value)}
-        value={user.company}
+        value={user.createdAt}
       />
       <input
         className={styles.inputText}

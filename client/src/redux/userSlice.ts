@@ -27,15 +27,14 @@ export const userSlice = createSlice({
       state.value.unshift(action.payload);
     },
     updateUser: (state, action) => {
-      const newArr = state.value.map((user, index) => {
-        if (user.id === action.payload.userId) {
-          return state.value.splice(index, 0, action.payload.updatedUser);
-        }
-        return state.value;
-      });
-
-      console.log("new arr", newArr);
-      state.value = newArr.flat(1);
+      return {
+        ...state,
+        value: state.value.map((user, i) =>
+          user.id === action.payload.updatedUser.id
+            ? { ...action.payload.updatedUser }
+            : { ...user }
+        ),
+      };
     },
   },
 });
