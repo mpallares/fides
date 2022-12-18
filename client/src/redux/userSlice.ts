@@ -24,7 +24,7 @@ export const userSlice = createSlice({
       state.value = filteredArr;
     },
     addUser: (state, action) => {
-      state.value = [...state.value, action.payload];
+      state.value.unshift(action.payload);
     },
     updateUser: (state, action) => {
       const newArr = state.value.map((user, index) => {
@@ -33,7 +33,9 @@ export const userSlice = createSlice({
         }
         return state.value;
       });
-      console.log("new arrayyyy", newArr);
+
+      console.log("new arr", newArr);
+      state.value = newArr.flat(1);
     },
   },
 });
