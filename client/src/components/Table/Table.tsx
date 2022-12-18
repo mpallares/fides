@@ -15,18 +15,10 @@ export interface TableProps {
 export const Table = ({
   columns,
   data,
-  users,
   onViewItemClick,
   onDeleteItemClick,
   onUpdateItemClick,
-}: //   columns,
-//   data,
-//   sorted,
-//   onSort,
-//   onViewItemClick,
-//   onUpdateItemClick,
-//   onDeleteItemClick,
-TableProps) => {
+}: TableProps) => {
   return (
     <div className={styles.container}>
       <table>

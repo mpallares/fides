@@ -24,7 +24,7 @@ test("should render Table component", () => {
   const onDeleteItemClick = () => {};
   const onUpdateItemClick = () => {};
 
-  const { getByText } = render(
+  render(
     <Table
       columns={columns}
       data={users}
@@ -43,7 +43,7 @@ test("should call view function on onViewItemClick", () => {
   const onDeleteItemClick = () => {};
   const onUpdateItemClick = () => {};
 
-  const { getByText } = render(
+  render(
     <Table
       columns={columns}
       data={users}

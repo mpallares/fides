@@ -59,7 +59,7 @@ export const UserDetails = ({ userId }: UserDetailsProps) => {
       {user?.projects
         ? user?.projects.map((project, index) => {
             return (
-              <>
+              <div key={project.phone}>
                 <p>
                   <b>City </b> {project.city}
                 </p>
@@ -74,7 +74,7 @@ export const UserDetails = ({ userId }: UserDetailsProps) => {
                 ) : null ? (
                   <hr className={styles.divider}></hr>
                 ) : null}
-              </>
+              </div>
             );
           })
         : null}

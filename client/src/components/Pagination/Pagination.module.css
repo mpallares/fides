@@ -3,7 +3,6 @@
     justify-content: center;
     align-items: center;
     list-style-type: none
-    
 }
 
 .pageLink {
@@ -20,7 +19,6 @@
     top: 0;
     transition: top ease 0.5s;
 }
-
 
 .pageLink:hover {
     top: -2.5px;
