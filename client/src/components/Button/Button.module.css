@@ -1,5 +1,6 @@
 .button {
-    border: 1px solid #fff;
+    border-radius: 5px;
+    border: none;
     font-weight: bold;
     cursor: pointer;
     background-color: #33FF99;
@@ -22,7 +23,8 @@
 
 button:disabled,
 button[disabled]{
-  border: 1px solid #999999;
+  border-radius: 5px;
+  border: none;
   background-color: #cccccc;
   color: #666666;
 }

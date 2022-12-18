@@ -1,17 +1,14 @@
-table, th, td {
-    border: 1px solid;
+table, th, td, thead, tr {
+    border-collapse: collapse;
+    opacity: 100;
   }
 
   .header {
-    background: rgb(0,67,255);
-
-background: linear-gradient(90deg, rgba(0,67,255,1) 0%, rgba(30,69,242,1) 26%, rgba(232,3,88,1) 100%);
-background: #006DA5;
+    background: #19115b
   }
 
   th {
-    border: black solid 1px;
-    padding: 0.5rem;
+    padding: 1.5rem 1rem;
     color: #fff
   }
   td {

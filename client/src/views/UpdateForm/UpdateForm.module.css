@@ -4,23 +4,24 @@
     padding: 6px ;
     width: 100%;
     border: none;
+    border-radius: 5px;
     background-color: #f3f3f3;
     outline: none;
   }
   
-  button[type=submit] {
+  .updateForm {
     margin: 20px auto 0;
     height: 40px;
-    border-radius: 25px;
+    border-radius: 5px;
     border: none;
     color: #eee;
     font-weight: 700;
     box-shadow: 1px 4px 10px 1px #aaa;
     cursor: pointer;
     font-family: "Montserrat";
-    background-color: #1e45f2;
+    background-color: #19115b;
     padding: 0.3rem 0.3rem;
-    width: 7rem;
+    width: 100%;
     margin: 0.5rem;
     color: white;
     text-align: center;

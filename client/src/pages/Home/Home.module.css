@@ -1,5 +1,12 @@
 body {
-    background-color: #1e45f2;
+    background-image: rgb(58,69,122);
+    background-image: linear-gradient(90deg, rgba(58,69,122,1) 0%, rgba(47,46,122,1) 26%, rgba(25,17,91,1) 100%);
+}
+
+.createButtonContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
 }
 
 .buttonsContainer {
