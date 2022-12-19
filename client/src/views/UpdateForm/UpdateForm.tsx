@@ -32,7 +32,7 @@ export const UpdateForm = ({ userId, setShowModal }: UpdateFormProps) => {
         const result = await api.get(`/users/${userId}`);
         const data = result.data;
         setUser({
-          ...user,
+          //   ...user,
           createdAt: data.createdAt,
           firstName: data.firstName,
           lastName: data.lastName,
@@ -49,7 +49,7 @@ export const UpdateForm = ({ userId, setShowModal }: UpdateFormProps) => {
       }
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userId]);
+  }, []);
 
   const handleChange = (inputName: keyof typeof user, value: string) => {
     setUser({
@@ -101,6 +101,14 @@ export const UpdateForm = ({ userId, setShowModal }: UpdateFormProps) => {
         placeholder="First Name"
         onChange={(e) => handleChange("firstName", e.target.value)}
         value={user.firstName}
+      />
+      <input
+        className={styles.inputText}
+        type="text"
+        name="lastName"
+        placeholder="Last Name"
+        onChange={(e) => handleChange("lastName", e.target.value)}
+        value={user.lastName}
       />
       <input
         className={styles.inputText}
